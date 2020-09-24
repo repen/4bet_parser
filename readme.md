@@ -11,7 +11,7 @@
 
 2. Создать рабочую директорию для скрипта и разархивировать туда архив. Например `С:\bet_scripts` .
 
-3. Необходимо открыть командную строку в windows. [ссылка](https://remontcompa.ru/windows/windows-81/477-kak-otkryt-komandnuyu-stroku-windows-8.html) 4 способ
+3. Необходимо открыть командную строку в windows. [ссылка](https://remontcompa.ru/windows/windows-81/477-kak-otkryt-komandnuyu-stroku-windows-8.html) 4 способ или любой какой понравится
 
 4. перейти в рабочию директорию скрипта командой `cd С:\bet_scripts`
 
