@@ -46,7 +46,7 @@ driver = chrome_browser()
 def _main():
 
     names = list(map( lambda x : re.findall(r"https:\/\/(?:www\.)?(.*?)\/", x)[0], URLS ))
-    ctime = datetime.now().strftime("%Y-%m-%d_%H:%M")
+    ctime = datetime.now().strftime("%Y-%m-%d_%H_%M")
     NAME = "Tennis-" + ctime + ".xlsx"
     FULL_PATH = os.path.join(PATH, "data" ,NAME)
     write( FULL_PATH, names )
