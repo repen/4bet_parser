@@ -24,10 +24,10 @@ for x in cmds:
 
 # os.system("python test.py")
 # 
-url = "https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_win32.zip"
-# url = "https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_linux64.zip"
+# url = "https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_win32.zip"
+url = "https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_linux64.zip"
 zip_webdriver = os.path.join(APP_DIR, "chromedriver.zip" )
 download_url( url, zip_webdriver )
 unzip( zip_webdriver )
-# os.chmod(os.path.join(APP_DIR, "chromedriver"), 0o775)
-os.chmod(os.path.join(APP_DIR, "chromedriver.exe"), 0o775)
+os.chmod(os.path.join(APP_DIR, "chromedriver"), 0o775)
+# os.chmod(os.path.join(APP_DIR, "chromedriver.exe"), 0o775)
