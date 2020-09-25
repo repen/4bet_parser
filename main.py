@@ -37,7 +37,7 @@ def chrome_browser():
     chrome_prefs["profile.default_content_settings"] = {"images": 2}
     chrome_prefs["profile.managed_default_content_settings"] = {"images": 2}
     co.add_experimental_option("prefs", chrome_prefs)
-    chrome_path = os.path.join(PATH, "chromedriver")
+    chrome_path = os.path.join(PATH, "chromedriver.exe")
     driver = webdriver.Chrome(chrome_path, chrome_options=co)
     return driver
 
