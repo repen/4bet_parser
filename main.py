@@ -37,7 +37,7 @@ def chrome_browser():
     chrome_prefs["profile.default_content_settings"] = {"images": 2}
     chrome_prefs["profile.managed_default_content_settings"] = {"images": 2}
     co.add_experimental_option("prefs", chrome_prefs)
-    chrome_path = os.path.join(PATH, "chromedriver.exe")
+    chrome_path = os.path.join(PATH, "chromedriver")
     driver = webdriver.Chrome(chrome_path, chrome_options=co)
     return driver
 
@@ -49,10 +49,11 @@ def _main():
     ctime = datetime.now().strftime("%Y-%m-%d_%H_%M")
     NAME = "Tennis-" + ctime + ".xlsx"
     FULL_PATH = os.path.join(PATH, "data" ,NAME)
-    write( FULL_PATH, names )
+
 
     log.info("Chrome browser opening")
-    driver.get( URLS[0] )
+    # driver.get( URLS[0] )
+
 
 
     for url in URLS:
@@ -73,6 +74,10 @@ def _main():
 
     log.info("Start!!!")
     time.sleep(10)
+
+    # import pdb;pdb.set_trace()
+    Urls = []
+    init = 1
     while True:
         temp = []
         for tab in driver.window_handles:
@@ -86,7 +91,14 @@ def _main():
                     result = func(html)
                     temp.append(  result )
                     log.info("Domain: %s Result: %s", domain , result)
-        write( FULL_PATH ,temp )
+            if init:
+                Urls.append(domain)
+        
+        if init:
+            write( FULL_PATH, Urls )
+            init = 0
+
+        write( FULL_PATH,temp )
         log.info("====== Sleep: %s ======", TIMEOUT)
         time.sleep(TIMEOUT)
 
